@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "wordproject",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authwordprojectd32752d1",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "AuthModeLastUpdated": "2022-02-27T01:51:09.306Z"
+}

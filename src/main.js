@@ -1,19 +1,16 @@
 import Vue from 'vue';
-import App from './App.vue';
-import store from './store/user';
-import router from './router/index';
-import vuetify from './plugins/vuetify';
-
+import App from '@/App.vue';
+import store from '@/store/user';
+import router from '@/router/index';
+import vuetify from '@/plugins/vuetify';
+import Amplify from 'aws-amplify';
+import aws_exports from '@/aws-exports';
 import {
   applyPolyfills,
   defineCustomElements,
 } from '@aws-amplify/ui-components/loader';
 
-import Amplify, * as AmplifyModules from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
-
-Vue.use(AmplifyModules);
+Amplify.configure(aws_exports);
 
 applyPolyfills().then(() => {
   defineCustomElements(window);
